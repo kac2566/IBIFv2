@@ -1,0 +1,240 @@
+%after-before {
+  background-color: $contrast;
+  border-radius: 4px;
+  content: '';
+  display: block;
+  height: 4px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  transition: background-color $timing-function, transform $timing-function,
+    width $timing-function;
+}
+
+.header {
+  $navigation: &;
+
+  padding: 15px var(--padding-left);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  box-shadow: transparent;
+  transition: box-shadow $timing-function;
+  background-color: $base;
+
+  &.scrolled {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__nav {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+    padding: unset;
+    align-items: center;
+
+    @include not-desktop {
+      gap: 24px;
+    }
+
+    a:not(.button__primary) {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.7;
+      letter-spacing: 0.36px;
+      position: relative;
+      color: $contrast;
+      transition: color $timing-function;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__logo {
+    transition: all $timing-function;
+    margin-right: 80px;
+    max-width: 201px;
+
+    svg,
+    img {
+      display: block;
+
+      @include box(100%);
+    }
+
+    @include not-desktop {
+      max-width: 102px;
+      max-height: 42px;
+    }
+  }
+
+  &__hamburger {
+    z-index: 11;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.4s ease-in-out;
+    width: 38px;
+    z-index: 11;
+    margin-left: auto;
+    border: unset;
+    background-color: unset;
+
+    @include desktop-only {
+      display: none;
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 65%;
+
+      @extend %after-before;
+    }
+
+    span::after,
+    span::before {
+      @extend %after-before;
+    }
+
+    span::before {
+      top: 0;
+      transform-origin: right top;
+      width: 88%;
+    }
+
+    span::after {
+      bottom: 0;
+      transform-origin: right top;
+      width: 40%;
+    }
+  }
+
+  @include not-desktop {
+    &__nav-wrapper {
+      z-index: 10;
+      transform-origin: right center;
+      visibility: hidden;
+      transform: translateX(100%);
+      transition: transform $timing-function, visibility $timing-function;
+
+      @include box(100vw, 100%);
+      @include position(fixed, 0, 0);
+
+      nav {
+        width: 450px;
+        position: relative;
+        background-color: $base;
+        overflow-y: auto;
+        height: 100%;
+        margin-left: auto;
+        padding: 30px 15px;
+        padding: 150px 15px 30px;
+        transform: translateX(100%);
+        transition: transform $timing-function;
+      }
+
+      &--is-open {
+        opacity: 1;
+        transform: translateX(0%);
+        visibility: visible;
+        transition: transform $timing-function, visibility $timing-function;
+
+        nav {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &__nav {
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+      a:not(.button__primary) {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 400;
+        height: 46px;
+        transition: 500ms;
+        width: 100%;
+        color: $contrast;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      .button__primary {
+        margin-top: 20px;
+      }
+    }
+
+    #{$navigation}__pseudo-element {
+      transform: translateX(100%);
+      transition: opacity $timing-function, transform $timing-function;
+      transform-origin: right center;
+    }
+  }
+
+  &--mobile-is-open {
+    overflow: hidden;
+
+    %after-before {
+      background-color: $contrast;
+    }
+
+    #{$navigation}__hamburger {
+      width: 30px;
+
+      &::after {
+        transform: translate(102%, -50%);
+      }
+
+      span::before {
+        transform: rotate(-46deg) translate(-3px, -2px) scaleX(1.2);
+        width: 100%;
+      }
+
+      span::after {
+        transform: rotate(46deg) translateY(1px) scaleX(1.2);
+        width: 100%;
+      }
+    }
+
+    #{$navigation}__pseudo-element {
+      content: '';
+      height: 100%;
+      background-color: $contrast;
+      display: block;
+      width: 100vw;
+      opacity: 0.7;
+      transform: translateX(0);
+
+      @include position(absolute, 0, 0, 0, 0);
+    }
+  }
+}

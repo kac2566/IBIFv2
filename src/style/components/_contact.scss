@@ -1,0 +1,102 @@
+.contact {
+  padding-top: $spacing-60;
+  padding-bottom: $spacing-60;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    padding: $spacing-40;
+    background-color: $light-blue;
+    border-radius: $border-radius-16;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+
+    @include mobile-only {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &__heading {
+    margin-bottom: unset;
+  }
+
+  &__description {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2;
+    letter-spacing: 0.36px;
+  }
+
+  &__form {
+    margin-top: $spacing-40;
+
+    button {
+      border-style: none;
+      cursor: pointer;
+      width: 100%;
+      margin-top: $spacing-40;
+    }
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    &.acceptance {
+      margin-bottom: unset;
+      display: inline-block;
+
+      label {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.24px;
+        margin-left: 10px;
+      }
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 2;
+      letter-spacing: 0.36px;
+    }
+
+    input,
+    textarea,
+    select {
+      padding: 18px 20px;
+      font-size: 16px;
+      color: $gray;
+      font-weight: 400;
+      border-style: none;
+      line-height: 2;
+      letter-spacing: 0.32px;
+      border-radius: $border-radius-8;
+      background-color: $base;
+      outline: 0;
+
+      &:focus {
+        outline: 1px solid $accent;
+      }
+    }
+
+    select {
+      color: $contrast;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+}

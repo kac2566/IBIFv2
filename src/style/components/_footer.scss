@@ -1,0 +1,77 @@
+.footer {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-40 0;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    max-width: 172px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+
+    @include tablet-only {
+      gap: 40px;
+    }
+
+    @include mobile-only {
+      gap: 24px;
+    }
+  }
+
+  &__link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    p {
+      margin: unset;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.7;
+      letter-spacing: 0.36px;
+    }
+
+    a {
+      color: $contrast;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.32px;
+      transition: color $timing-function;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__copy {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 400;
+    line-height: 200%;
+    letter-spacing: 0.32px;
+    color: $base;
+    background-color: $blue;
+    margin: 0;
+
+    a {
+      color: inherit;
+      transition: color $timing-function;
+
+      &:hover {
+        color: $contrast;
+      }
+    }
+  }
+}

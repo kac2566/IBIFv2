@@ -1,0 +1,27 @@
+{
+  "name": "ibif",
+  "version": "1.0.0",
+  "description": "Ibif rekrutacja",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --config webpack.config.js",
+    "prod": "webpack --mode production --config webpack.config.js"
+  },
+  "author": "Kacper",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.10.0",
+    "mini-css-extract-plugin": "^2.8.0",
+    "sass-loader": "^14.1.0",
+    "style-loader": "^3.3.4",
+    "terser-webpack-plugin": "^5.3.10",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "remixicon": "^4.3.0",
+    "sass": "^1.77.8",
+    "swiper": "^11.1.9"
+  }
+}

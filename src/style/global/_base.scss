@@ -1,0 +1,49 @@
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+  visibility: inherit;
+
+  @include desktop-only {
+    --padding-right: 50px;
+    --padding-left: 50px;
+  }
+
+  @include tablet-only {
+    --padding-right: 32px;
+    --padding-left: 32px;
+  }
+
+  @include mobile-only {
+    --padding-right: 16px;
+    --padding-left: 16px;
+  }
+}
+
+main {
+  display: block;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+img {
+  @include box(100%);
+}
+
+p {
+  margin-top: unset;
+}

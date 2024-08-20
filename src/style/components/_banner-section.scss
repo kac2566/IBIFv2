@@ -1,0 +1,64 @@
+.banner-section {
+  background-color: $light-blue;
+
+  &__wrapper {
+    padding-top: $spacing-80;
+    padding-bottom: $spacing-60;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: $gap;
+
+    @include tablet-only {
+      gap: 40px;
+    }
+
+    @include mobile-only {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 24px;
+    }
+  }
+
+  &__arrow-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: $spacing-40;
+    justify-content: flex-end;
+  }
+
+  &__arrow {
+    position: relative;
+    top: unset;
+    left: unset;
+    right: unset;
+    display: block;
+    margin: unset;
+    border: 2px solid $blue;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $blue;
+
+      @include icon('\EA6E', 2em);
+      @include box(20px);
+    }
+
+    &:is(.swiper-button-prev) {
+      transform: rotate(180deg);
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+}

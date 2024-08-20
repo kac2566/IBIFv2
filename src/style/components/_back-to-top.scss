@@ -1,0 +1,80 @@
+.back-to-top {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  a {
+    z-index: 10;
+    transition: background-color $timing-function, outline $timing-function;
+    border-radius: 50%;
+    background-color: $accent;
+    color: $base;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 0;
+
+    @include box(60px);
+
+    @include position(fixed, null, 4em, 4em);
+
+    @include tablet-only {
+      right: 2em;
+      bottom: 2em;
+    }
+
+    @include mobile-only {
+      right: 1.5em;
+      bottom: 1.5em;
+    }
+
+    @media print {
+      display: none;
+    }
+
+    &::before {
+      @include icon('\EA78', 2em);
+    }
+
+    &:hover {
+      background-color: $base;
+      color: $accent;
+      outline: 1px solid $accent;
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    span {
+      pointer-events: none;
+      position: absolute;
+      width: max-content;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-size: 13px;
+      background-color: $gray;
+      right: calc(100% + 14px);
+      padding: 8px 16px;
+      border-radius: 16px;
+      color: $base;
+      opacity: 0;
+      transition: opacity $timing-function;
+
+      &::after {
+        content: '';
+        height: 0;
+        left: calc(100% - 1px);
+        position: absolute;
+        right: auto;
+        top: 50%;
+        width: 0;
+        border: 7px solid transparent;
+        transform: translateY(-50%);
+        border-left-color: $gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+// Box
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+//  remixicon
+@mixin icon($content, $font-size: 1em, $position: relative) {
+  content: $content;
+  font-family: 'remixicon', sans-serif;
+  font-size: $font-size;
+  position: $position;
+}
+
+// Query Mixin
+@mixin desktop-only {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin not-desktop {
+  @media only screen and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media only screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin not-mobile {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin media-custom-max($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-custom-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// Positions
+@mixin position(
+  $position: false,
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false
+) {
+  @if $position {
+    position: $position;
+  }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+}

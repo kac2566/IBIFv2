@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Poppins';
+}
+
+.font-2xl {
+  font-size: clamp(2.25rem, 1.75vw + 1.9rem, 3.625rem);
+}
+
+.font-xl {
+  font-size: clamp(1.75rem, 0.5vw + 1.65rem, 2.25rem);
+}
+
+.font-l {
+  font-size: clamp(1.625rem, 0.125vw + 1.6rem, 1.75rem);
+  line-height: normal;
+}
+
+.font-m {
+  font-size: 18px;
+}
+
+.font-s {
+  font-size: 16px;
+}
+
+h1 {
+  margin-top: unset;
+  margin-bottom: 20px;
+  font-weight: 500;
+  letter-spacing: -1.16px;
+  line-height: 1.3;
+
+  @extend .font-2xl;
+}
+
+h2 {
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  margin-top: unset;
+
+  @extend .font-xl;
+}
+
+h3 {
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 10px;
+  margin-top: unset;
+
+  @extend .font-l;
+}

@@ -1,0 +1,41 @@
+// BREAKPOINTS
+$desktop: 1025px;
+$tablet: 640px;
+
+// BORDER RADIUS
+$border-radius-4: 4px;
+$border-radius-8: 8px;
+$border-radius-12: 12px;
+$border-radius-16: 16px;
+
+// COLORS
+$base: #ffffff;
+$contrast: #191818;
+$accent: #da1384;
+$light-blue: #f0f9ff;
+$blue: #06c2f1;
+$gray: #ababab;
+
+// Transtion
+$timing-function: 0.4s ease-in-out;
+
+// Gap
+$gap: 60px;
+
+// Spacing
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-10: 10px;
+$spacing-12: 12px;
+$spacing-15: 15px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: calc(clamp(24px, 10%, 32px));
+$spacing-40: calc(clamp(2rem, 0.5vw + 1.9rem, 2.5rem));
+$spacing-48: calc(clamp(2rem, 1vw + 1.8rem, 3rem));
+$spacing-50: calc(clamp(2rem, 1.125vw + 1.775rem, 3.125rem));
+$spacing-56: calc(clamp(2rem, 1.5vw + 1.7rem, 3.5rem));
+$spacing-60: calc(clamp(2.5rem, 1.5vw + 2.2rem, 3.75rem));
+$spacing-80: calc(clamp(2.5rem, 2vw + 2.1rem, 5rem));
+$spacing-96: calc(clamp(3.5rem, 2.5vw + 3rem, 6rem));
+$spacing-120: calc(clamp(4.5rem, 2.5vw + 4rem, 7.5rem));
